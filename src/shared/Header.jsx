@@ -12,12 +12,6 @@ export default function Header() {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [openModal, setopenModal] = useState(false);
 
-  const menuList = [
-    { name: "Test centers", path: "/" },
-    { name: "Check certificate", path: "" },
-    { name: "Labor result", path: "" },
-    { name: "Partnership", path: "" },
-  ];
 
   useEffect(() => {
     const handleScroll = () => {

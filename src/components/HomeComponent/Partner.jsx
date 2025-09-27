@@ -2,7 +2,6 @@ import Container from "../../common/Container";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 // Default theme
 import "@splidejs/react-splide/css";
-
 // or other themes
 import "@splidejs/react-splide/css/skyblue";
 import "@splidejs/react-splide/css/sea-green";
@@ -23,14 +22,23 @@ export default function Partner() {
               gap: "1rem",
               arrows: false,
               pagination: false,
-              autoplay: "play",
+              autoplay: true,
               breakpoints: {
-                640: {
+                1280: {
+                  perPage: 4,
+                  gap: "1rem",
+                },
+                1024: {
+                  perPage: 3,
+                  gap: ".8rem",
+                },
+                768: {
                   perPage: 2,
                   gap: ".7rem",
                 },
                 480: {
                   perPage: 1,
+                  gap: ".5rem",
                 },
               },
             }}
