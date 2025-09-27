@@ -56,7 +56,7 @@ export default function TestCenter({ onSearch }) {
   return (
     <div className="py-16 lg:py-24">
       <Container>
-        <div className="flex flex-col-reverse lg:flex-row items-center justify-between">
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between">
           {/* left */}
 
           <div className="md:max-w-[40%] w-full mt-10 lg:mt-0">

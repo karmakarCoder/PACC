@@ -2,7 +2,7 @@ export default function MapSvg() {
   return (
     <svg
       id="map"
-      className="shrink-0 w-full lg:w-[550px]"
+      className="shrink-0 w-full md:w-[400px] lg:w-[550px]"
       viewBox="0 0 628 479"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

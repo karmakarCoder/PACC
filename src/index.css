@@ -8,6 +8,7 @@
 
 @layer components {
   body {
+    scroll-behavior: smooth;
     font-family: "Montserrat", sans-serif;
   }
 }
