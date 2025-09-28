@@ -6,8 +6,33 @@ import "@splidejs/react-splide/css";
 import "@splidejs/react-splide/css/skyblue";
 import "@splidejs/react-splide/css/sea-green";
 import logo1 from "../../assets/Images/partner-logo-bmet.cbf0ede2.svg";
+import logo2 from "../../assets/Images/partner-logo-navttc.3710b617 (1).svg";
+import logo3 from "../../assets/Images/partner-logo-nsdc.61dd5291.svg";
+import logo4 from "../../assets/Images/partner-logo-tvec.6b66474e.svg";
 
 export default function Partner() {
+  const data = [
+    {
+      name: "BMET",
+      img: logo1,
+      url: "http://www.old.bmet.gov.bd/BMET/index",
+    },
+    {
+      name: "NAVTTC",
+      img: logo2,
+      url: "https://navttc.gov.pk/",
+    },
+    {
+      name: "TVEC",
+      img: logo4,
+      url: "https://www.tvec.gov.lk/",
+    },
+    {
+      name: "NSDC",
+      img: logo3,
+      url: "https://nsdcindia.org/",
+    },
+  ];
   return (
     <div className="py-10 lg:py-20">
       <Container>
@@ -47,7 +72,7 @@ export default function Partner() {
           }}
           aria-label="My Favorite Images"
         >
-          {[...Array(10)].map((_, index) => (
+          {data.map((item, index) => (
             <SplideSlide
               key={index}
               className={"hover:scale-105 duration-200 py-10"}
@@ -57,12 +82,16 @@ export default function Partner() {
                   className="text-3xl font-semibold text-black
                  uppercase"
                 >
-                  BMET
+                  {item?.name}
                 </h4>
-                <img src={logo1} alt="" className="w-36 lg:w-40" />
-                <button className="w-full cursor-pointer hover:bg-primary hover:text-white   duration-200 py-2 text-primary bg-white rounded-md text-lg font-medium">
+                <img src={item?.img} alt="" className="w-36 lg:w-40" />
+                <a
+                  href={item.url}
+                  target="_blank"
+                  className="w-full cursor-pointer hover:bg-primary hover:text-white flex items-center justify-center  duration-200 py-2 text-primary bg-white rounded-md text-lg font-medium"
+                >
                   Go to website
-                </button>
+                </a>
               </div>
             </SplideSlide>
           ))}

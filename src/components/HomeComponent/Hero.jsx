@@ -18,15 +18,19 @@ export default function Hero() {
             opportunities.
           </p>
           <div className="flex items-center gap-4 text-lg">
-            <button className="py-1.5 font-medium px-4 rounded-sm bg-primary text-[#dde2e2] duration-75 leading-normal  cursor-pointer hover:bg-[#126f74]">
+            <a
+              href="https://svp-international.pacc.sa/auth/login"
+              className="py-1.5 font-medium px-4 rounded-sm bg-primary text-[#dde2e2] duration-75 leading-normal  cursor-pointer hover:bg-[#126f74]"
+            >
               Sign in
-            </button>
-            <button
+            </a>
+            <a
+              href="https://svp-international.pacc.sa/auth/register"
               className="py-1.5 leading-normal
                hover:bg-primary hover:text-[#e1edee] font-medium px-4 rounded-sm duration-75 cursor-pointer bg-[#cde6e7] text-primary"
             >
               Sign Up
-            </button>
+            </a>
           </div>
         </div>
       </Container>

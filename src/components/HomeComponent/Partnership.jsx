@@ -5,7 +5,7 @@ import { GoArrowRight } from "react-icons/go";
 export default function Partnership() {
   return (
     <div
-    id="partnership"
+      id="partnership"
       className="w-full h-full py-20 md:py-28 bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${partnershipBg})` }}
     >
@@ -19,17 +19,21 @@ export default function Partnership() {
         </p>
 
         <div className="flex items-center gap-4 text-sm lg:text-lg mt-10">
-          <button className="py-3 md:py-1.5 font-medium px-4 md:px-6 rounded-sm bg-primary text-[#dde2e2] duration-75 leading-normal flex items-center gap-2 cursor-pointer hover:bg-[#126f74]">
+          <a
+            href="https://svp-international.pacc.sa/auth/register-assessor"
+            className="py-3 md:py-1.5 font-medium px-4 md:px-6 rounded-sm bg-primary text-[#dde2e2] duration-75 leading-normal flex items-center gap-2 cursor-pointer hover:bg-[#126f74]"
+          >
             Sign up as Assessor{" "}
             <GoArrowRight className="text-xl hidden sm:block" />
-          </button>
-          <button
+          </a>
+          <a
+            href="https://svp-international.pacc.sa/auth/login"
             className="py-3 md:py-1.5 leading-normal
                hover:bg-primary hover:text-[#e1edee] font-medium px-4 md:px-6 rounded-sm duration-75 cursor-pointer flex items-center gap-2 bg-white text-primary"
           >
             Sign in as Assessor{" "}
             <GoArrowRight className="text-xl hidden sm:block" />
-          </button>
+          </a>
         </div>
       </Container>
     </div>

@@ -9,17 +9,35 @@ import { AiOutlineQuestionCircle } from "react-icons/ai";
 export default function Footer() {
   // footer list
   const footerList = [
-    { name: "Privacy Policy", path: "" },
-    { name: "Terms Of Use", path: "" },
-    { name: "Knowledge center", path: "" },
+    {
+      name: "Privacy Policy",
+      path: "https://svp-international.pacc.sa/visitor/privacy-policy",
+    },
+    {
+      name: "Terms Of Use",
+      path: "https://svp-international.pacc.sa/visitor/terms-of-use",
+    },
+    {
+      name: "Knowledge center",
+      path: "https://svp-international.pacc.sa/visitor/knowledge/",
+    },
   ];
 
   // social links
   const socialLink = [
-    { icon: <FaFacebook />, url: "" },
-    { icon: <FaXTwitter />, url: "" },
-    { icon: <FaLinkedinIn />, url: "" },
-    { icon: <FaYoutube />, url: "" },
+    {
+      icon: <FaFacebook />,
+      url: "https://www.facebook.com/SaudiPACC?mibextid=LQQJ4d",
+    },
+    { icon: <FaXTwitter />, url: "https://x.com/SaudiPACC" },
+    {
+      icon: <FaLinkedinIn />,
+      url: "https://www.linkedin.com/showcase/professional-accreditation/",
+    },
+    {
+      icon: <FaYoutube />,
+      url: "https://www.youtube.com/@professionalaccreditation3045/featured",
+    },
   ];
   return (
     <div className="py-10 border-t-primary border-t-2">
@@ -27,16 +45,16 @@ export default function Footer() {
         <div className="flex items-center flex-wrap justify-between gap-8">
           <div className="text-base max-w-[300px] w-full gap-x-4 gap-2 text-center justify-center flex flex-wrap items-center font-normal text-[#8394a8]">
             {footerList?.map((item, index) => (
-              <Link key={index} className="hover:underline">
+              <a href={item?.path} key={index} className="hover:underline">
                 {item?.name}
-              </Link>
+              </a>
             ))}
           </div>
           <div className="flex items-center gap-5">
             <div className="flex items-center gap-2">
               {socialLink?.map((item, index) => (
                 <a
-                  href=""
+                  href={item?.url}
                   key={index}
                   className="size-7 rounded-sm duration-300 hover:bg-primary hover:text-[#eaf2f3] text-lg flex items-center justify-center text-primary bg-[#eaf2f3]"
                 >

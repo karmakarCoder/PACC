@@ -12,7 +12,6 @@ export default function Header() {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [openModal, setopenModal] = useState(false);
 
-
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -54,7 +53,7 @@ export default function Header() {
                 </Link>
 
                 <Link
-                  to="/check-certificate"
+                  onClick={() => setopenModal(true)}
                   className={`relative group transition-colors duration-300 ${
                     scrolled ? "text-black" : "text-white"
                   }`}
@@ -63,7 +62,7 @@ export default function Header() {
                 </Link>
 
                 <Link
-                  to="/labor-result"
+                  onClick={() => setopenModal(true)}
                   className={`relative group transition-colors duration-300 ${
                     scrolled ? "text-black" : "text-white"
                   }`}
@@ -71,14 +70,14 @@ export default function Header() {
                   Labor result
                 </Link>
 
-                <Link
-                  to="/partnership"
+                <a
+                  href="#partnership"
                   className={`relative group transition-colors duration-300 ${
                     scrolled ? "text-black" : "text-white"
                   }`}
                 >
                   Partnership
-                </Link>
+                </a>
               </div>
             </div>
 
@@ -86,20 +85,24 @@ export default function Header() {
             <div className="flex items-center gap-4">
               {scrolled && (
                 <div className="sm:flex hidden items-center gap-4 text-base">
-                  <button className="py-1.5 font-medium px-4 rounded-sm bg-primary text-[#dde2e2] duration-75 leading-normal  cursor-pointer hover:bg-[#126f74]">
+                  <a
+                    href="https://svp-international.pacc.sa/auth/login"
+                    className="py-1.5 font-medium px-4 rounded-sm bg-primary text-[#dde2e2] duration-75 leading-normal  cursor-pointer hover:bg-[#126f74]"
+                  >
                     Sign in
-                  </button>
-                  <button
+                  </a>
+                  <a
+                    href="https://svp-international.pacc.sa/auth/register"
                     className="py-1.5 leading-normal
                hover:bg-primary hover:text-[#e1edee] font-medium px-4 rounded-sm duration-75 cursor-pointer bg-[#cde6e7] text-primary"
                   >
                     Sign Up
-                  </button>
+                  </a>
                 </div>
               )}
 
               <p
-                className={`text-base font-normal flex items-center gap-1 ${
+                className={`text-base hidden font-normal lg:flex items-center gap-1 ${
                   scrolled ? "text-black" : "text-white"
                 }`}
               >
@@ -173,16 +176,27 @@ export default function Header() {
           </NavLink>
         </div>
 
+        <p
+          className={`text-base font-normal flex items-center gap-1 text-black mt-5`}
+        >
+          <CiGlobe className="text-2xl" />
+          English
+        </p>
+
         <div className="flex items-center gap-4 text-base mt-6">
-          <button className="py-1.5 font-medium px-2 rounded-sm bg-primary text-[#dde2e2] duration-75 leading-normal  cursor-pointer hover:bg-[#126f74]">
+          <a
+            href="https://svp-international.pacc.sa/auth/login"
+            className="py-1.5 font-medium px-2 rounded-sm bg-primary text-[#dde2e2] duration-75 leading-normal  cursor-pointer hover:bg-[#126f74]"
+          >
             Sign in
-          </button>
-          <button
+          </a>
+          <a
+            href="https://svp-international.pacc.sa/auth/register"
             className="py-1.5 leading-normal
                hover:bg-primary hover:text-[#e1edee] font-medium px-2 rounded-sm duration-75 cursor-pointer bg-[#cde6e7] text-primary"
           >
             Sign Up
-          </button>
+          </a>
         </div>
       </div>
 
