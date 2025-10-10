@@ -6,11 +6,13 @@ import logo2 from "../assets/Images/logo2.png";
 import { CiGlobe } from "react-icons/ci";
 import { HiOutlineBars2 } from "react-icons/hi2";
 import CertificateModal from "../common/CertificateModal";
+import ResultModal from "../common/ResultModal";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
   const [openModal, setopenModal] = useState(false);
+  const [openModal2, setopenModal2] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,10 +22,21 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // handle verify
+  const handleVerify = (passport, serial) => {
+    return {
+      serial: "168998740",
+      passport: "A04252094",
+      validUntil: "13/08/2030",
+      occupation: "Construction Worker",
+      laborName: "MD SHAHABUL ALI",
+    };
+  };
+
   return (
     <>
       <div
-        className={`fixed top-0 left-0 w-full py-5 z-[455] transition-all duration-500 ${
+        className={`fixed top-0 left-0 w-full py-5 z-[444] transition-all duration-500 ${
           scrolled
             ? "bg-white shadow-md translate-y-0"
             : "bg-transparent translate-y-1.5"
@@ -43,14 +56,14 @@ export default function Header() {
 
               {/* Desktop Menu */}
               <div className="hidden lg:flex items-center gap-6 text-base font-normal">
-                <Link
-                  onClick={() => setopenModal(true)}
+                <a
+                  href="#testcenter"
                   className={`relative group transition-colors duration-300 ${
                     scrolled ? "text-black" : "text-white"
                   }`}
                 >
                   Test centers
-                </Link>
+                </a>
 
                 <Link
                   onClick={() => setopenModal(true)}
@@ -62,7 +75,7 @@ export default function Header() {
                 </Link>
 
                 <Link
-                  onClick={() => setopenModal(true)}
+                  onClick={() => setopenModal2(true)}
                   className={`relative group transition-colors duration-300 ${
                     scrolled ? "text-black" : "text-white"
                   }`}
@@ -155,14 +168,20 @@ export default function Header() {
           </NavLink>
 
           <NavLink
-            onClick={() => setMobileMenu(false)}
+            onClick={() => {
+              setMobileMenu(false);
+              setopenModal(true);
+            }}
             className="relative group transition-colors duration-300 hover:underline text-primary"
           >
             Check certificate
           </NavLink>
 
           <NavLink
-            onClick={() => setMobileMenu(false)}
+            onClick={() => {
+              setMobileMenu(false);
+              setopenModal2(true);
+            }}
             className="relative group transition-colors duration-300 hover:underline text-primary"
           >
             Labor result
@@ -200,11 +219,15 @@ export default function Header() {
         </div>
       </div>
 
-      {/* modal */}
+      {/* certificate modal */}
       <CertificateModal
         isOpen={openModal}
         onClose={() => setopenModal(false)}
+        onVerify={handleVerify}
       />
+
+      {/* result modal */}
+      <ResultModal isOpen={openModal2} onClose={() => setopenModal2(false)} />
     </>
   );
 }

@@ -6,9 +6,12 @@
   --color-primary: #148287;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer components {
   body {
-    scroll-behavior: smooth;
     font-family: "Montserrat", sans-serif;
   }
 }
