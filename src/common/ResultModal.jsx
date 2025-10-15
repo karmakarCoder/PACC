@@ -31,7 +31,7 @@ export default function ResultModal({ isOpen, onClose, onVerify }) {
   return (
     <div
       onClick={onClose}
-      className="fixed top-0 left-0 w-full h-full bg-black/40 flex items-center  flex-col z-[555] p-4"
+      className="fixed top-0 left-0 w-full h-full bg-black/40 flex items-center  flex-col justify-center md:justify-start z-[555] p-4"
     >
       <div
         onClick={(e) => e.stopPropagation()}

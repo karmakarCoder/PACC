@@ -4,15 +4,15 @@ import Container from "../../common/Container";
 export default function Hero() {
   return (
     <div
-      className="w-full lg:h-screen bg-center bg-cover bg-no-repeat pb-48 lg:pb-0 pt-48 lg:pt-70"
+      className="w-full min-h-screen bg-center bg-cover bg-no-repeat  flex-auto items-center flex"
       style={{ backgroundImage: `url(${bg1})` }}
     >
-      <Container>
-        <div className="">
+      <div className="max-w-[1200px] w-full mx-auto px-4 2xl:px-0">
+        <div>
           <h1 className="text-2xl lg:text-6xl font-semibold text-white max-w-[300px] md:max-w-[900px] w-full">
             Elevating Careers, Unlocking New Opportunities
           </h1>
-          <p className="text-lg font-light max-w-[500px] w-full text-white mt-5 mb-7">
+          <p className="text-sm md:text-lg font-light max-w-[500px] w-full text-white mt-6 mb-8">
             Professional Accreditation Program helps workers stand out by
             verifying their skills, opening doors to new and better job
             opportunities.
@@ -33,7 +33,7 @@ export default function Hero() {
             </a>
           </div>
         </div>
-      </Container>
+      </div>
     </div>
   );
 }

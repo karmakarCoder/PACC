@@ -47,7 +47,7 @@ export default function CertificateModal({ isOpen, onClose, onVerify }) {
   return (
     <div
       onClick={onClose}
-      className="fixed left-0 top-0 w-full h-full flex-col bg-black/40 flex items-center z-[555] p-4"
+      className="fixed left-0 top-0 w-full h-full flex-col bg-black/40 flex items-center justify-center md:justify-start z-[555] p-4"
     >
       <div
         onClick={(e) => e.stopPropagation()}
