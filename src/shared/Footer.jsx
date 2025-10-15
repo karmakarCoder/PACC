@@ -74,8 +74,9 @@ export default function Footer() {
       </Container>
 
       {/* contact support */}
-      <div className="py-2.5 px-6 rounded-full cursor-pointer duration-200 hover:bg-[#18949b] bg-primary flex items-center gap-1.5 text-white font-medium fixed bottom-10 right-10 z-50">
-        <AiOutlineQuestionCircle className="text-xl" /> Support
+      <div className="md:py-2.5 p-3 md:p-0 md:px-6 rounded-full cursor-pointer duration-200 hover:bg-[#18949b] bg-primary flex items-center gap-1.5 text-white font-medium fixed bottom-10 right-10 z-50">
+        <AiOutlineQuestionCircle className="text-2xl md:text-xl" />
+        <span className="md:block hidden">Support</span>
       </div>
     </div>
   );

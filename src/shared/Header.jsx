@@ -7,6 +7,7 @@ import { CiGlobe } from "react-icons/ci";
 import { HiOutlineBars2 } from "react-icons/hi2";
 import CertificateModal from "../common/CertificateModal";
 import ResultModal from "../common/ResultModal";
+import { GrMenu } from "react-icons/gr";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -134,9 +135,9 @@ export default function Header() {
                     setMobileMenu(!mobileMenu);
                     setopenModal(false);
                   }}
-                  className="size-9 bg-primary text-white rounded-full flex items-center justify-center"
+                  className="size-9  rounded-full flex items-center justify-center"
                 >
-                  <HiOutlineBars2 className="text-3xl" />
+                  <GrMenu className="text-3xl" />
                 </button>
               </div>
             </div>
@@ -157,15 +158,13 @@ export default function Header() {
         }`}
       >
         <div className="flex flex-col gap-4 text-black">
-          <NavLink
-            onClick={() => {
-              setMobileMenu(false);
-              setopenModal(true);
-            }}
+          <a
+            href="#testcenter"
+            onClick={() => setMobileMenu(false)}
             className="relative group transition-colors duration-300 hover:underline text-primary"
           >
             Test centers
-          </NavLink>
+          </a>
 
           <NavLink
             onClick={() => {
@@ -187,20 +186,14 @@ export default function Header() {
             Labor result
           </NavLink>
 
-          <NavLink
+          <a
+            href="#partnership"
             onClick={() => setMobileMenu(false)}
             className="relative group transition-colors duration-300 hover:underline text-primary"
           >
             Partnership
-          </NavLink>
+          </a>
         </div>
-
-        <p
-          className={`text-base font-normal flex items-center gap-1 text-black mt-5`}
-        >
-          <CiGlobe className="text-2xl" />
-          English
-        </p>
 
         <div className="flex items-center gap-4 text-base mt-6">
           <a
@@ -217,6 +210,12 @@ export default function Header() {
             Sign Up
           </a>
         </div>
+        <p
+          className={`text-base font-normal flex items-center gap-1 text-black mt-5`}
+        >
+          <CiGlobe className="text-2xl" />
+          English
+        </p>
       </div>
 
       {/* certificate modal */}

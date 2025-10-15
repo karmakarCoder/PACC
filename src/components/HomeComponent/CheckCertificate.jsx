@@ -3,8 +3,24 @@ import Container from "../../common/Container";
 import overlay from "../../assets/Images/check-mask.c04acc23.svg";
 import cardBg from "../../assets/Images/check-certificate-desktop.d64866bb.webp";
 import cardBg2 from "../../assets/Images/check-labor-mobile.4c6443ac.webp";
+import CertificateModal from "../../common/CertificateModal";
+import ResultModal from "../../common/ResultModal";
+import { useState } from "react";
 
 export default function CheckCertificate() {
+  const [openModal, setopenModal] = useState(false);
+  const [openModal2, setopenModal2] = useState(false);
+
+  // handle verify
+  const handleVerify = (passport, serial) => {
+    return {
+      serial: "168998740",
+      passport: "A04252094",
+      validUntil: "13/08/2030",
+      occupation: "Construction Worker",
+      laborName: "MD SHAHABUL ALI",
+    };
+  };
   return (
     <div className="lg:py-20 py-5">
       <Container>
@@ -49,7 +65,10 @@ export default function CheckCertificate() {
 
                   {/* Button Section */}
                   <div className="mt-5">
-                    <button className="group inline-flex items-center gap-3 bg-white text-slate-700 cursor-pointer font-semibold px-6 py-3 rounded-md hover:bg-gray-200 transition-all text-lg duration-200 transform  focus:outline-none">
+                    <button
+                      onClick={() => setopenModal(true)}
+                      className="group inline-flex items-center gap-3 bg-white text-slate-700 cursor-pointer font-semibold px-6 py-3 rounded-md hover:bg-gray-200 transition-all text-lg duration-200 transform  focus:outline-none"
+                    >
                       <span>Check certificate</span>
                       <BsArrowRight className="transition-transform duration-200 group-hover:translate-x-2" />
                     </button>
@@ -90,7 +109,10 @@ export default function CheckCertificate() {
 
                   {/* Button Section */}
                   <div className="mt-5">
-                    <button className="group inline-flex items-center gap-3 bg-white text-slate-700 cursor-pointer font-semibold px-6 py-3 rounded-md hover:bg-gray-200 transition-all text-lg duration-200 transform  focus:outline-none">
+                    <button
+                      onClick={() => setopenModal2(true)}
+                      className="group inline-flex items-center gap-3 bg-white text-slate-700 cursor-pointer font-semibold px-6 py-3 rounded-md hover:bg-gray-200 transition-all text-lg duration-200 transform  focus:outline-none"
+                    >
                       <span>Check result</span>
                       <BsArrowRight className="transition-transform duration-200 group-hover:translate-x-2" />
                     </button>
@@ -101,6 +123,15 @@ export default function CheckCertificate() {
           </div>
         </div>
       </Container>
+      {/* certificate modal */}
+      <CertificateModal
+        isOpen={openModal}
+        onClose={() => setopenModal(false)}
+        onVerify={handleVerify}
+      />
+
+      {/* result modal */}
+      <ResultModal isOpen={openModal2} onClose={() => setopenModal2(false)} />
     </div>
   );
 }

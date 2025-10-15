@@ -59,28 +59,30 @@ export default function Proggram() {
           </span>
         </h4>
       </Container>
-      <div className="mt-10 lg:mt-20 flex items-center gap-10 justify-between">
-        <div className="max-w-[500px] hidden lg:block w-full overflow-hidden rounded-r-md">
-          <img
-            src={proggramImg}
-            alt=""
-            className="w-full h-full object-cover"
-          />
+      <Container>
+        <div className="mt-10 lg:mt-20 flex items-center gap-10 justify-between">
+          <div className="max-w-[500px] hidden lg:block w-full overflow-hidden rounded-md">
+            <img
+              src={proggramImg}
+              alt=""
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="sm:grid-cols-2 grid gap-8 px-4 lg:px-0">
+            {data.map((item, index) => (
+              <div key={index}>
+                <img src={item?.image} alt="" className="w-16 lg:w-20" />
+                <h5 className="text-xl lg:text-3xl font-semibold w-full lg:max-w-[200px] text-[#14415a] py-3">
+                  {item?.name}
+                </h5>
+                <p className="text-base w-full lg:max-w-[350px] font-normal text-[#8394a8]">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="sm:grid-cols-2 grid gap-8 px-4 lg:px-0">
-          {data.map((item, index) => (
-            <div key={index}>
-              <img src={item?.image} alt="" className="w-16 lg:w-20" />
-              <h5 className="text-xl lg:text-3xl font-semibold w-full lg:max-w-[200px] text-[#14415a] py-3">
-                {item?.name}
-              </h5>
-              <p className="text-base w-full lg:max-w-[350px] font-normal text-[#8394a8]">
-                {item.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
+      </Container>
     </div>
   );
 }

@@ -4,12 +4,12 @@ import Container from "../../common/Container";
 export default function Hero() {
   return (
     <div
-      className="w-full lg:h-screen bg-center bg-cover bg-no-repeat pb-36 lg:pb-0 pt-36 lg:pt-70"
+      className="w-full lg:h-screen bg-center bg-cover bg-no-repeat pb-48 lg:pb-0 pt-48 lg:pt-70"
       style={{ backgroundImage: `url(${bg1})` }}
     >
       <Container>
         <div className="">
-          <h1 className="text-2xl lg:text-6xl font-medium text-white max-w-[900px] w-full">
+          <h1 className="text-2xl lg:text-6xl font-semibold text-white max-w-[300px] md:max-w-[900px] w-full">
             Elevating Careers, Unlocking New Opportunities
           </h1>
           <p className="text-lg font-light max-w-[500px] w-full text-white mt-5 mb-7">
